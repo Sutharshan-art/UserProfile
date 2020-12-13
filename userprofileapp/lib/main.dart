@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:userprofileapp/image.dart';
 
 void main() {
   runApp(MyApp());
@@ -148,7 +149,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   heroTag: "btn1",
                   backgroundColor: Colors.blue,
                   child: Icon(Icons.camera),
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TakePictureScreen(
+                                  camera: null,
+                                )));
+                  }),
             ),
           ),
           Padding(
