@@ -1,8 +1,11 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:userprofileapp/image.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 
@@ -149,12 +152,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   heroTag: "btn1",
                   backgroundColor: Colors.blue,
                   child: Icon(Icons.camera),
-                  onPressed: () {
+                  onPressed: () async {
+                    final cameras = await availableCameras();
+
+                    final firstCamera = cameras.first;
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => TakePictureScreen(
-                                  camera: null,
+                                  camera: firstCamera,
                                 )));
                   }),
             ),
