@@ -1,7 +1,7 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:userprofileapp/image.dart';
+
+import 'img_upload.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -153,15 +153,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.blue,
                   child: Icon(Icons.camera),
                   onPressed: () async {
-                    final cameras = await availableCameras();
-
-                    final firstCamera = cameras.first;
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TakePictureScreen(
-                                  camera: firstCamera,
-                                )));
+                            builder: (context) =>
+                                UploadingImageToFirebaseStorage()));
                   }),
             ),
           ),
