@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:userprofileapp/vid_upload.dart';
 
 import 'img_upload.dart';
 
@@ -169,7 +170,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   heroTag: "btn3",
                   backgroundColor: Colors.blue,
                   child: Icon(Icons.videocam),
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                UploadingVideoToFirebaseStorage()));
+                  }),
             ),
           ),
           Align(
