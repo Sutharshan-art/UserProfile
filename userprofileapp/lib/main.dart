@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:userprofileapp/vid_upload.dart';
+import 'package:userprofileapp/view_uploads.dart';
 
 import 'img_upload.dart';
 
@@ -177,6 +178,23 @@ class _MyHomePageState extends State<MyHomePage> {
                             builder: (context) =>
                                 UploadingVideoToFirebaseStorage()));
                   }),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 210),
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: FloatingActionButton(
+                heroTag: "btn4",
+                backgroundColor: Colors.blue,
+                child: Text('View Uploads'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ViewUploadsFromFirebase()));
+                },
+              ),
             ),
           ),
           Align(

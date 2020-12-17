@@ -76,7 +76,7 @@ class _UploadingVideoToFirebaseStorageState
         );
   }
 
-  //Upload viseo from gallery
+  //Upload video from gallery
 
   Future uploadGalleryVideoToFirebase(BuildContext context) async {
     String fileName = basename(_videoFileGal.path);
