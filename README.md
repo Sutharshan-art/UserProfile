@@ -1,0 +1,2 @@
+User profile application is a mobile application developed using Flutter framework and Firebase for backend. It is just a practical demo application done by me to prepare for the Internship project.
+Using this application, the users could be able to create their profile with their personal informations and also could upload the images and videos taken from the camera and from the mobile gallery as well.
